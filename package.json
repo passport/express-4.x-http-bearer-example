@@ -1,0 +1,26 @@
+{
+  "name": "express-4.x-http-bearer-example",
+  "version": "0.0.0",
+  "description": "Express 4.x app using Passport for authentication via HTTP Bearer scheme.",
+  "keywords": [
+    "example",
+    "express",
+    "passport"
+  ],
+  "author": "Jared Hanson",
+  "license": "Unlicense",
+  "homepage": "https://github.com/passport/express-4.x-http-bearer-example",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/passport/express-4.x-http-bearer-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/passport/express-4.x-http-bearer-example/issues"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "morgan": "^1.6.1",
+    "passport": "^0.2.2",
+    "passport-http-bearer": "^1.0.1"
+  }
+}
