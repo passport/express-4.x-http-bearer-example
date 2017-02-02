@@ -16,6 +16,10 @@ $ npm install
 Start the server.
 
 ```bash
+$ npm start
+```
+or
+```bash
 $ node server.js
 ```
 
@@ -23,4 +27,8 @@ Use `curl` to send an authenticated request.
 
 ```bash
 $ curl -v -H "Authorization: Bearer 123456789" http://127.0.0.1:3000/
+```
+or
+```bash
+$ curl -v 'http://127.0.0.1:3000/?access_token=abcdefghi'
 ```
