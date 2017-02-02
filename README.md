@@ -32,3 +32,5 @@ or
 ```bash
 $ curl -v 'http://127.0.0.1:3000/?access_token=abcdefghi'
 ```
+
+![](Postman.jpg)

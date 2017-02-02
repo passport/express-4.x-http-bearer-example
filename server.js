@@ -32,6 +32,9 @@ app.use(require('morgan')('combined'));
 
 // curl -v -H "Authorization: Bearer 123456789" http://127.0.0.1:3000/
 // curl -v 'http://127.0.0.1:3000/?access_token=123456789'
+
+//The first parameter of passport.authenticate must not given wrong name. It must be strategy name defined internally
+//https://github.com/jaredhanson/passport-http-bearer/blob/master/lib/strategy.js#L65
 app.get('/',
   passport.authenticate('bearer', {session: false}),
   function (req, res) {
