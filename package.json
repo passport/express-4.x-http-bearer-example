@@ -7,8 +7,11 @@
     "express",
     "passport"
   ],
+  "scripts": {
+    "start": "node server.js"
+  },
   "author": "Jared Hanson",
-  "license": "Unlicense",
+  "license": "MIT",
   "homepage": "https://github.com/passport/express-4.x-http-bearer-example",
   "repository": {
     "type": "git",
@@ -20,7 +23,7 @@
   "dependencies": {
     "express": "^4.13.3",
     "morgan": "^1.6.1",
-    "passport": "^0.2.2",
+    "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1"
   }
 }

@@ -1,6 +1,12 @@
 # Mac OS X
 .DS_Store
-
+.idea
 # Node.js
 node_modules/
 npm-debug.log
+.idea/express-4.x-http-bearer-example.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/watcherTasks.xml
+.idea/workspace.xml

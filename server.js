@@ -1,7 +1,7 @@
-var express = require('express');
-var passport = require('passport');
-var Strategy = require('passport-http-bearer').Strategy;
-var db = require('./db');
+const express = require('express');
+const passport = require('passport');
+const Strategy = require('passport-http-bearer').Strategy;
+const db = require('./db');
 
 
 // Configure the Bearer strategy for use by Passport.
@@ -11,27 +11,36 @@ var db = require('./db');
 // `cb` with a user object, which will be set at `req.user` in route handlers
 // after authentication.
 passport.use(new Strategy(
-  function(token, cb) {
-    db.users.findByToken(token, function(err, user) {
-      if (err) { return cb(err); }
-      if (!user) { return cb(null, false); }
+  function (token, cb) {
+    db.users.findByToken(token, function (err, user) {
+      if (err) {
+        return cb(err);
+      }
+      if (!user) {
+        return cb(null, false);
+      }
       return cb(null, user);
     });
   }));
 
 
 // Create a new Express application.
-var app = express();
+const app = express();
 
 // Configure Express application.
 app.use(require('morgan')('combined'));
 
 // curl -v -H "Authorization: Bearer 123456789" http://127.0.0.1:3000/
-// curl -v http://127.0.0.1:3000/?access_token=123456789
+// curl -v 'http://127.0.0.1:3000/?access_token=123456789'
+
+//The first parameter of passport.authenticate must not given wrong name. It must be strategy name defined internally
+//https://github.com/jaredhanson/passport-http-bearer/blob/master/lib/strategy.js#L65
 app.get('/',
-  passport.authenticate('bearer', { session: false }),
-  function(req, res) {
-    res.json({ username: req.user.username, email: req.user.emails[0].value });
+  passport.authenticate('bearer', {session: false}),
+  function (req, res) {
+    res.json({username: req.user.username, email: req.user.emails[0].value});
   });
 
 app.listen(3000);
+
+console.log('Server listens at port 3000');
