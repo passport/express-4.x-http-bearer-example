@@ -8,7 +8,7 @@ To install this example on your computer, clone the repository and install
 dependencies.
 
 ```bash
-$ git clone git@github.com:passport/express-4.x-http-bearer-example.git
+$ git clone https://github.com/passport/express-4.x-http-bearer-example.git
 $ cd express-4.x-http-bearer-example
 $ npm install
 ```
